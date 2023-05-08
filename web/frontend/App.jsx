@@ -13,19 +13,30 @@ export default function App() {
   // See documentation for <Routes /> for more info
   const pages = import.meta.globEager("./pages/**/!(*.test.[jt]sx)*.([jt]sx)");
 
+  // return (
+  //   <PolarisProvider>
+  //     <BrowserRouter>
+  //       <AppBridgeProvider>
+  //         <QueryProvider>
+  //           <NavigationMenu
+  //             navigationLinks={[
+  //               {
+  //                 label: "Page name",
+  //                 destination: "/pagename",
+  //               },
+  //             ]}
+  //           />
+  //           <Routes pages={pages} />
+  //         </QueryProvider>
+  //       </AppBridgeProvider>
+  //     </BrowserRouter>
+  //   </PolarisProvider>
+  // );
   return (
     <PolarisProvider>
       <BrowserRouter>
         <AppBridgeProvider>
           <QueryProvider>
-            <NavigationMenu
-              navigationLinks={[
-                {
-                  label: "Page name",
-                  destination: "/pagename",
-                },
-              ]}
-            />
             <Routes pages={pages} />
           </QueryProvider>
         </AppBridgeProvider>
